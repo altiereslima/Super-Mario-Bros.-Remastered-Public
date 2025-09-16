@@ -74,6 +74,9 @@ func _input(event: InputEvent) -> void:
 			cancel_remap()
 			return
 	
+	if type == 1 && event.device != Settings.file.controller.controller_id:
+		return
+	
 	if type == 0 and event is InputEventKey:
 		map_event_to_action(event)
 	elif type == 1 and (event is InputEventJoypadButton or event is InputEventJoypadMotion):
@@ -87,6 +90,8 @@ func map_event_to_action(event) -> void:
 	events[type] = event
 	InputMap.action_erase_events(action)
 	for i in events:
+		if type == 1: # 1 for controller
+			i.device = Settings.file.controller.controller_id
 		InputMap.action_add_event(action, i)
 	input_changed.emit(action, event)
 	input_event = event

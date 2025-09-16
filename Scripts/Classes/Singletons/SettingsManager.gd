@@ -43,7 +43,8 @@ var file := {
 		"move_left": "0,-1",
 		"move_right": "0,1",
 		"move_up": "1,-1",
-		"move_down": "1,1"
+		"move_down": "1,1",
+		"controller_id": "0"
 	},
 	"visuals":
 	{

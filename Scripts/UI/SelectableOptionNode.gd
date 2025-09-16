@@ -1,3 +1,4 @@
+class_name SelectableOption
 extends HBoxContainer
 
 @export var option_key := ""
