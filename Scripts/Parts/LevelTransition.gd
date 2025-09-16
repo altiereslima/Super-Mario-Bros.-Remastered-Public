@@ -102,7 +102,7 @@ func transition() -> void:
 func show_best_time() -> void:
 	var best_time = SpeedrunHandler.best_time
 	if SpeedrunHandler.best_time <= 0:
-		$BG/Control/MarathonPB.text = "\nNO PB"
+		$BG/Control/MarathonPB.text = "\nSEM REC."
 		return
 	var string = "PB\n" + SpeedrunHandler.gen_time_string(SpeedrunHandler.format_time(SpeedrunHandler.best_time))
 	$BG/Control/MarathonPB.text = string

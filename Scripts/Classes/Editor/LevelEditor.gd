@@ -337,7 +337,7 @@ func handle_layers() -> void:
 		tile_layer_nodes[idx].z_index = i.z_index - 1
 		%LayerDisplay.get_child(idx).modulate = Color.WHITE if current_layer == idx else Color(0.1, 0.1, 0.1, 0.5)
 		idx += 1
-	%LayerLabel.text = "Layer " + str(current_layer + 1)
+	%LayerLabel.text = "Camada " + str(current_layer + 1)
 
 func save_level() -> void:
 	level_author = %LevelAuthor.text
@@ -349,7 +349,7 @@ func save_level() -> void:
 	menu_open = false
 	level_file = $LevelSaver.save_level(level_name, level_author, level_desc, difficulty)
 	$LevelSaver.write_file(level_file, file_name)
-	%SaveDialog.text = str("'") +  file_name + "'" + " Saved." 
+	%SaveDialog.text = str("'") +  file_name + "'" + " Salva." 
 	%SaveAnimation.play("Show")
 	level_saved.emit()
 

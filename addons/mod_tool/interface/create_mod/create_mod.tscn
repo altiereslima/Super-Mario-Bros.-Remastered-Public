@@ -40,7 +40,7 @@ layout_mode = 2
 input_placeholder = "Namespace"
 is_required = true
 key = "namespace"
-label_text = "Namespace ( Author Name )"
+label_text = "Namespace ( Nome do Autor )"
 
 [node name="ModName" parent="MarginContainer/Settings/Scroll/VBox" instance=ExtResource("2")]
 unique_name_in_owner = true
@@ -48,7 +48,7 @@ layout_mode = 2
 input_placeholder = "ModName"
 is_required = true
 key = "name"
-label_text = "Mod Name"
+label_text = "Nome do Mod"
 
 [node name="ModId" parent="MarginContainer/Settings/Scroll/VBox" instance=ExtResource("2")]
 unique_name_in_owner = true
@@ -57,7 +57,7 @@ is_editable = false
 input_placeholder = "Namespace-ModName"
 is_required = true
 key = "mod_id"
-label_text = "Mod ID"
+label_text = "ID do Mod"
 
 [node name="Space" type="Control" parent="MarginContainer/Settings/Scroll/VBox"]
 custom_minimum_size = Vector2(0, 15)
@@ -69,7 +69,7 @@ layout_mode = 2
 input_options = Array[String]([])
 is_required = true
 key = "mod_template"
-label_text = "Template"
+label_text = "Modelo"
 
 [node name="Buttons" type="PanelContainer" parent="MarginContainer/Settings"]
 layout_mode = 2
@@ -79,7 +79,7 @@ layout_mode = 2
 
 [node name="btn_create_mod" type="Button" parent="MarginContainer/Settings/Buttons/VBox"]
 layout_mode = 2
-text = "Create"
+text = "Criar"
 
 [connection signal="about_to_popup" from="." to="." method="_on_CreateMod_about_to_show"]
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]

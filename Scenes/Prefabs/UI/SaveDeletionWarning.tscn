@@ -88,7 +88,7 @@ alignment = 1
 [node name="SelectWorld" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.968627, 0.223529, 0.0627451, 1)
-text = "Warning!!"
+text = "Aviso!!"
 horizontal_alignment = 1
 autowrap_mode = 2
 uppercase = true
@@ -103,9 +103,9 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "This will erase all of your data from this campaign.
+text = "Isso apagará todos os seus dados desta campanha.
 
-Do you wish to proceed?"
+Deseja continuar?"
 horizontal_alignment = 1
 autowrap_mode = 2
 uppercase = true
@@ -119,14 +119,14 @@ alignment = 1
 [node name="Yes" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(32, 0)
 layout_mode = 2
-text = "Yes"
+text = "Sim"
 autowrap_mode = 2
 uppercase = true
 
 [node name="No" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(32, 0)
 layout_mode = 2
-text = "no"
+text = "Não"
 autowrap_mode = 2
 uppercase = true
 

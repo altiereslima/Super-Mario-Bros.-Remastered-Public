@@ -1,5 +1,10 @@
 extends Node
 
+# --- INÍCIO DAS MODIFICAÇÕES DO CURSOR ---
+var cursor_hide_timer: Timer
+const CURSOR_HIDE_DELAY := 3.0 # Tempo em segundos de inatividade para esconder o cursor
+# --- FIM DAS MODIFICAÇÕES DO CURSOR ---
+
 var level_theme := "Overworld":
 	set(value):
 		level_theme = value
@@ -165,6 +170,16 @@ var p_switch_timer_paused := false
 var debug_mode := false
 
 func _ready() -> void:
+	# --- INÍCIO DAS MODIFICAÇÕES DO CURSOR ---
+	# Configura o Timer para esconder o cursor
+	cursor_hide_timer = Timer.new()
+	cursor_hide_timer.wait_time = CURSOR_HIDE_DELAY
+	cursor_hide_timer.one_shot = true
+	add_child(cursor_hide_timer)
+	cursor_hide_timer.timeout.connect(_on_cursor_hide_timer_timeout)
+	cursor_hide_timer.start()
+	# --- FIM DAS MODIFICAÇÕES DO CURSOR ---
+
 	current_version = get_version_number()
 	get_server_version()
 	if OS.is_debug_build():
@@ -188,6 +203,16 @@ func check_for_rom() -> void:
 			rom_assets_exist = true 
 		else:
 			OS.move_to_trash(ROM_ASSETS_PATH)
+
+# --- INÍCIO DA FUNÇÃO ADICIONADA ---
+# Esta função é chamada a cada evento de input (teclado, mouse, etc.)
+func _input(event: InputEvent) -> void:
+	# Verifica se o evento foi um movimento do mouse
+	if event is InputEventMouseMotion:
+		# Se o mouse se moveu, mostra o cursor e reinicia o timer
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		cursor_hide_timer.start()
+# --- FIM DA FUNÇÃO ADICIONADA ---
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("debug_reload"):
@@ -420,3 +445,10 @@ func sanitize_string(string := "") -> String:
 		if FONT.has_char(string.unicode_at(i)) == false and string[i] != "\n":
 			string = string.replace(string[i], " ")
 	return string
+
+# --- INÍCIO DAS MODIFICAÇÕES DO CURSOR ---
+# Esta função é chamada quando o timer termina
+func _on_cursor_hide_timer_timeout() -> void:
+	# O timer terminou, o que significa que o mouse está parado. Esconde o cursor.
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+# --- FIM DAS MODIFICAÇÕES DO CURSOR ---

@@ -164,7 +164,7 @@ anchor_right = 1.0
 offset_bottom = 16.0
 grow_horizontal = 2
 size_flags_vertical = 0
-text = "ROM VERIFICATION REQUIRED!"
+text = "VERIFICAÇÃO DE ROM NECESSÁRIA!"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -175,7 +175,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Please Drag and drop your vanilla WORLD \"super mario bros\" rom onto the window."
+text = "Por favor, arraste e solte sua ROM ORIGINAL do WORLD de \"Super Mario Bros\" na janela."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -194,9 +194,9 @@ offset_top = -40.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
-text = "ERROR VERIFYING ROM!
+text = "ERRO AO VERIFICAR A ROM!
 
-ARE YOU SURE ITS A VALID VANILLA NES SMB1 ROM?"
+TEM CERTEZA DE QUE É UMA ROM ORIGINAL DO NES SMB1?"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -213,7 +213,7 @@ offset_top = -40.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
-text = "PLEASE EXTRACT THE ROM FILE, OUT OF THE ZIP FIRST"
+text = "POR FAVOR, EXTRAIA O ARQUIVO ROM DO ZIP PRIMEIRO"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -222,9 +222,9 @@ unique_name_in_owner = true
 visible = false
 modulate = Color(0, 1, 0, 1)
 layout_mode = 2
-text = "ROM VERIFIED! THANK YOU!
+text = "ROM VERIFICADA! OBRIGADO!
 
-PROCEEDING..."
+PROCESSANDO..."
 horizontal_alignment = 1
 autowrap_mode = 2
 

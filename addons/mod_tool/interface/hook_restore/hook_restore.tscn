@@ -33,8 +33,8 @@ alignment = 1
 [node name="LabelInfoText" type="RichTextLabel" parent="Restart/MarginContainer/VBC"]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-text = "Successfully restored all scripts. 
-A restart of the editor is required."
+text = "Todos os scripts foram restaurados com sucesso. 
+É necessário reiniciar o editor."
 fit_content = true
 
 [node name="HBC" type="HBoxContainer" parent="Restart/MarginContainer/VBC"]
@@ -44,11 +44,11 @@ theme_override_constants/separation = 30
 
 [node name="ButtonRestartNow" type="Button" parent="Restart/MarginContainer/VBC/HBC"]
 layout_mode = 2
-text = "Restart Now"
+text = "Reiniciar Agora"
 
 [node name="ButtonRestartLater" type="Button" parent="Restart/MarginContainer/VBC/HBC"]
 layout_mode = 2
-text = "Restart Later"
+text = "Reiniciar Depois"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -68,9 +68,9 @@ theme_override_constants/separation = 20
 [node name="LabelInfoText" type="RichTextLabel" parent="MarginContainer/VBC"]
 custom_minimum_size = Vector2(600, 0)
 layout_mode = 2
-text = "This will restore all scripts to their state before mod hooks were added. Any changes made to these scripts will be lost!
+text = "Isso restaurará todos os scripts ao estado anterior à adição dos hooks do mod. Qualquer alteração feita nesses scripts será perdida!
 
-The process may take some time depending on the number of scripts."
+O processo pode demorar algum tempo, dependendo do número de scripts."
 fit_content = true
 
 [node name="VBC" type="VBoxContainer" parent="MarginContainer/VBC"]
@@ -80,7 +80,7 @@ theme_override_constants/separation = 10
 [node name="ButtonRestoreStart" type="Button" parent="MarginContainer/VBC/VBC"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Start Restore"
+text = "Iniciar Restauração"
 
 [node name="VBC2" type="VBoxContainer" parent="MarginContainer/VBC"]
 layout_mode = 2

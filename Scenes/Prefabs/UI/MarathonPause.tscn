@@ -35,7 +35,7 @@ func quit_to_menu() -> void:
 [node name="PauseMenu" instance=ExtResource("1_uvhg6")]
 
 [node name="Label2" parent="Control/PanelContainer/MarginContainer/VBoxContainer" index="1"]
-text = "Restart run"
+text = "Reiniciar corrida"
 
 [node name="Handler" type="Node" parent="." index="2"]
 script = SubResource("GDScript_k4rkm")

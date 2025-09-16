@@ -32,8 +32,8 @@ theme_override_constants/separation = 20
 [node name="LabelInfoText" type="RichTextLabel" parent="Restart/MarginContainer/VBC"]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-text = "Successfully generated mod hooks. 
-To start modding, a restart of the editor is required."
+text = "Hooks de mod gerados com sucesso. 
+Para iniciar a modificação, é necessário reiniciar o editor."
 fit_content = true
 
 [node name="HBC" type="HBoxContainer" parent="Restart/MarginContainer/VBC"]
@@ -43,11 +43,11 @@ theme_override_constants/separation = 30
 
 [node name="ButtonRestartNow" type="Button" parent="Restart/MarginContainer/VBC/HBC"]
 layout_mode = 2
-text = "Restart Now"
+text = "Reiniciar Agora"
 
 [node name="ButtonRestartLater" type="Button" parent="Restart/MarginContainer/VBC/HBC"]
 layout_mode = 2
-text = "Restart Later"
+text = "Reiniciar Depois"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -67,9 +67,9 @@ theme_override_constants/separation = 20
 [node name="LabelInfoText" type="RichTextLabel" parent="MarginContainer/VBC"]
 custom_minimum_size = Vector2(600, 0)
 layout_mode = 2
-text = "This will modify all existing scripts in the project, so please make sure to save your files before continuing.
+text = "Isso modificará todos os scripts existentes no projeto, portanto, salve seus arquivos antes de continuar.
 
-The process may take some time depending on the number of scripts."
+O processo pode demorar algum tempo, dependendo do número de scripts."
 fit_content = true
 
 [node name="VBC" type="VBoxContainer" parent="MarginContainer/VBC"]
@@ -79,12 +79,12 @@ theme_override_constants/separation = 10
 [node name="ButtonGenStart" type="Button" parent="MarginContainer/VBC/VBC"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Generate mod hooks"
+text = "Gerar hooks de mod"
 
 [node name="ButtonHooksExist" type="Button" parent="MarginContainer/VBC/VBC"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Hooks already exist"
+text = "Hooks já existem"
 
 [node name="VBC2" type="VBoxContainer" parent="MarginContainer/VBC"]
 layout_mode = 2

@@ -23,7 +23,7 @@ var file := {
 	},
 	"game": {
 		"campaign": "SMB1",
-		"lang": "en",
+		"lang": "pt",
 		"character": "0000"
 	},
 	"keyboard":

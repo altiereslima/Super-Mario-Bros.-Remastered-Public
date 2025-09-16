@@ -324,8 +324,8 @@ values = ["VIDEO_HUD_STRETCHED", "VIDEO_HUD_CENTER"]
 [node name="FrameLimit" parent="PanelContainer/MarginContainer/VBoxContainer/Video" instance=ExtResource("3_dl6kk")]
 layout_mode = 2
 option_key = "frame_limit"
-title = "FRAME LIMIT"
-values = ["Unlimited", "60fps", "120fps", "144fps", "240fps"]
+title = "LIMITE DE QUADROS"
+values = ["Ilimitado", "60fps", "120fps", "144fps", "240fps"]
 
 [node name="WindowChanger" type="Node" parent="PanelContainer/MarginContainer/VBoxContainer/Video"]
 script = ExtResource("5_hnwhb")
@@ -839,7 +839,7 @@ layout_mode = 2
 
 [node name="RegenROM" parent="PanelContainer/MarginContainer/VBoxContainer/Data" instance=ExtResource("9_t6b48")]
 layout_mode = 2
-title = "Delete Generated Resource Pack"
+title = "Apagar Pacote de Recursos Gerado"
 
 [node name="Control" type="Control" parent="PanelContainer"]
 custom_minimum_size = Vector2(24, 0)

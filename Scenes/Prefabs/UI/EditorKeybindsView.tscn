@@ -51,7 +51,7 @@ theme_override_constants/separation = 4
 [node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "KEYBINDS"
+text = "ATALHOS"
 
 [node name="HSeparator" type="HSeparator" parent="Panel/MarginContainer/VBoxContainer/Label"]
 layout_mode = 1
@@ -96,7 +96,7 @@ region_rect = Rect2(21, 46, 21, 46)
 [node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Layers"]
 modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
 layout_mode = 2
-text = "Layers"
+text = "Camadas"
 uppercase = true
 
 [node name="MovePlayer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
@@ -122,7 +122,7 @@ region_rect = Rect2(90, 92, 10, 11)
 [node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/MovePlayer"]
 modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
 layout_mode = 2
-text = "Move Player"
+text = "Mover Jogador"
 uppercase = true
 
 [node name="PickBlock" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
@@ -140,7 +140,7 @@ region_rect = Rect2(60, 92, 30, 23)
 [node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/PickBlock"]
 modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
 layout_mode = 2
-text = "PICK TILE"
+text = "SELECIONAR PEÇA"
 uppercase = true
 
 [node name="TestLevel" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
@@ -158,7 +158,7 @@ region_rect = Rect2(58, 0, 58, 23)
 [node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/TestLevel"]
 modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
 layout_mode = 2
-text = "Test Level"
+text = "Testar Fase"
 uppercase = true
 
 [node name="InspectTile" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
@@ -184,7 +184,7 @@ region_rect = Rect2(90, 92, 10, 11)
 [node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/InspectTile"]
 modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
 layout_mode = 2
-text = "Inspect tile"
+text = "Inspecionar peça"
 uppercase = true
 
 [node name="PlaceArea" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
@@ -213,7 +213,7 @@ region_rect = Rect2(90, 92, 10, 11)
 modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
 layout_mode = 2
 size_flags_horizontal = 3
-text = "PLACE / REMOVE AREA"
+text = "COLOCAR / REMOVER ÁREA"
 autowrap_mode = 2
 uppercase = true
 
@@ -243,6 +243,6 @@ region_rect = Rect2(102, 97, 12, 18)
 modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
 layout_mode = 2
 size_flags_horizontal = 3
-text = "CHANGE TILE"
+text = "MUDAR PEÇA"
 autowrap_mode = 2
 uppercase = true

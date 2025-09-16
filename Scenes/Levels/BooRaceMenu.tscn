@@ -658,7 +658,7 @@ theme_override_styles/separator = SubResource("StyleBoxLine_vpste")
 [node name="PB" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "PB: 00:00:00"
+text = "REC.: 00:00:00"
 
 [node name="Logo" type="Sprite2D" parent="PanelContainer"]
 position = Vector2(60, -27)

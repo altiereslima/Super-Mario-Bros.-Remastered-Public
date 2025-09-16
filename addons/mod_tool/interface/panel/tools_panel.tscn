@@ -71,17 +71,17 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Panel/VSplit/Export/HSplit/Console/HBox"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Output:"
+text = "Saída:"
 
 [node name="CopyOutput" type="Button" parent="Panel/VSplit/Export/HSplit/Console/HBox"]
 layout_mode = 2
 shortcut = SubResource("12")
-text = "Copy"
+text = "Copiar"
 
 [node name="ClearOutput" type="Button" parent="Panel/VSplit/Export/HSplit/Console/HBox"]
 layout_mode = 2
 shortcut = SubResource("13")
-text = "Clear"
+text = "Limpar"
 
 [node name="Output" type="RichTextLabel" parent="Panel/VSplit/Export/HSplit/Console"]
 unique_name_in_owner = true
@@ -107,7 +107,7 @@ theme_override_constants/separation = 5
 layout_mode = 2
 mouse_filter = 2
 mouse_default_cursor_shape = 0
-text = "Export"
+text = "Exportar"
 editable = false
 context_menu_enabled = false
 virtual_keyboard_enabled = false
@@ -117,16 +117,16 @@ middle_mouse_paste_enabled = false
 [node name="ModId" parent="Panel/VSplit/Export/HSplit/Settings/VBox" instance=ExtResource("4")]
 unique_name_in_owner = true
 layout_mode = 2
-tooltip_text = "ID of the mod to be exported.
+tooltip_text = "ID do mod a ser exportado.
 Format: Namespace-ModName
 (Often Author-ModName)"
 mouse_default_cursor_shape = 16
 is_editable = false
-input_text = "Test-Test"
+input_text = "Teste-Teste"
 is_required = true
-label_text = "Mod ID"
+label_text = "ID do Mod"
 editor_icon_name = ""
-hint_text = "ID of the mod to be exported.
+hint_text = "ID do mod a ser exportado.
 Format: Namespace-ModName
 (Often Author-ModName)"
 
@@ -136,18 +136,18 @@ visible = false
 layout_mode = 2
 is_required = true
 key = "export_type"
-label_text = "Export Type"
+label_text = "Tipo de Exportação"
 
 [node name="ExportPath" parent="Panel/VSplit/Export/HSplit/Settings/VBox" instance=ExtResource("8")]
 unique_name_in_owner = true
 layout_mode = 2
-tooltip_text = "The directory to which the final mod zip is exported."
+tooltip_text = "O diretório para o qual o arquivo zip final do mod será exportado."
 mouse_default_cursor_shape = 16
 input_text = "C:/Users/Kai/Documents/godot/Brotato/mods/Mods/exports"
 is_required = true
 key = "path_export_dir"
-label_text = "Export Path"
-hint_text = "The directory to which the final mod zip is exported."
+label_text = "Caminho de Exportação"
+hint_text = "O diretório para o qual o arquivo zip final do mod será exportado."
 
 [node name="Align" type="HBoxContainer" parent="Panel/VSplit/Export/HSplit/Settings/VBox"]
 layout_mode = 2
@@ -157,11 +157,11 @@ alignment = 2
 [node name="ExportStatus" type="Label" parent="Panel/VSplit/Export/HSplit/Settings/VBox/Align"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Export Status OK"
+text = "Status da Exportação OK"
 
 [node name="Export" type="Button" parent="Panel/VSplit/Export/HSplit/Settings/VBox/Align"]
 layout_mode = 2
-text = "Export Mod"
+text = "Exportar Mod"
 
 [node name="VBox" type="VBoxContainer" parent="Panel/VSplit/Export/HSplit"]
 custom_minimum_size = Vector2(300, 0)
@@ -172,7 +172,7 @@ theme_override_constants/separation = 5
 layout_mode = 2
 mouse_filter = 2
 mouse_default_cursor_shape = 0
-text = "More Actions"
+text = "Mais Ações"
 editable = false
 context_menu_enabled = false
 virtual_keyboard_enabled = false
@@ -181,21 +181,21 @@ middle_mouse_paste_enabled = false
 
 [node name="CreateMod" type="Button" parent="Panel/VSplit/Export/HSplit/VBox"]
 layout_mode = 2
-text = "Create new Mod"
+text = "Criar Novo Mod"
 
 [node name="ConnectMod" type="Button" parent="Panel/VSplit/Export/HSplit/VBox"]
 layout_mode = 2
-text = "Connect existing Mod"
+text = "Conectar Mod Existente"
 
 [node name="AddHooks" type="Button" parent="Panel/VSplit/Export/HSplit/VBox"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Add Hooks to all Scripts"
+text = "Adicionar Hooks a Todos os Scripts"
 
 [node name="Restore" type="Button" parent="Panel/VSplit/Export/HSplit/VBox"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Restore non Hooked Scripts"
+text = "Restaurar Scripts sem Hooks"
 
 [node name="CreateMod" parent="." instance=ExtResource("1")]
 unique_name_in_owner = true
@@ -221,10 +221,10 @@ visible = false
 
 [node name="FileDialog" type="FileDialog" parent="."]
 unique_name_in_owner = true
-title = "Open a Directory"
+title = "Abrir um Diretório"
 initial_position = 1
 size = Vector2i(800, 500)
-ok_button_text = "Select Current Folder"
+ok_button_text = "Selecionar Pasta Atual"
 file_mode = 2
 access = 2
 

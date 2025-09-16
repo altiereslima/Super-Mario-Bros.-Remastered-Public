@@ -37,7 +37,7 @@ uppercase = true
 [node name="Value" type="Label" parent="."]
 layout_mode = 2
 size_flags_horizontal = 10
-text = "press any.."
+text = "aperte algo.."
 uppercase = true
 
 [node name="Timer" type="Timer" parent="."]

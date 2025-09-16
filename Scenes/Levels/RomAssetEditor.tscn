@@ -49,7 +49,7 @@ size_flags_horizontal = 0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_potm2")
 theme_override_font_sizes/font_size = 12
-text = "No ROM path set...
+text = "Nenhum caminho de ROM definido...
 
 Open the game normally, and
 provide a ROM."
@@ -141,7 +141,7 @@ theme_override_font_sizes/font_size = 8
 [node name="Update" type="Button" parent="Buttons/VBoxContainer2/JSONContainer"]
 layout_mode = 2
 focus_mode = 0
-text = "Update"
+text = "Atualizar"
 
 [node name="CurSprite" type="Label" parent="Buttons/VBoxContainer2"]
 unique_name_in_owner = true
@@ -150,7 +150,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 8
 theme_override_fonts/font = SubResource("SystemFont_nik6x")
 theme_override_font_sizes/font_size = 12
-text = "CURRENT SPRITE:
+text = "SPRITE ATUAL:
 MARIO.PNG"
 horizontal_alignment = 1
 
@@ -162,22 +162,22 @@ alignment = 2
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 6
-placeholder_text = "Palette"
+placeholder_text = "Paleta"
 
 [node name="LastImage" type="Button" parent="Buttons/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
-text = "Last"
+text = "Anterior"
 
 [node name="NextImage" type="Button" parent="Buttons/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
-text = "Next"
+text = "Próximo"
 
 [node name="SaveImage" type="Button" parent="Buttons/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
-text = "Save"
+text = "Salvar"
 
 [node name="JSON" type="Button" parent="Buttons/VBoxContainer"]
 layout_mode = 2
