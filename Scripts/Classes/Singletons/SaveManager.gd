@@ -1,6 +1,14 @@
 extends Node
 
-const SAVE_DIR := "user://saves/CAMPAIGN.sav"
+static func get_config_path() -> String:
+	var exe_dir = OS.get_executable_path().get_base_dir()
+	var portable_flag = exe_dir.path_join("portable.txt")
+	if FileAccess.file_exists(portable_flag):
+		return exe_dir.path_join("config/")
+	else:
+		return "user://"
+	
+var SAVE_DIR := get_config_path().path_join("saves/CAMPAIGN.sav")
 
 var visited_levels := "1000000000000000000000000000000010000000000000000000"
 
@@ -70,11 +78,11 @@ func write_save(campaign: String = Global.current_campaign, force := false) -> v
 	if Global.debugged_in and not force:
 		return
 	var save = null
-	DirAccess.make_dir_recursive_absolute("user://saves")
+	DirAccess.make_dir_recursive_absolute(get_config_path().path_join("saves"))
 	var save_json = {}
-	var path = "user://saves/" + campaign + ".sav"
+	var path = get_config_path().path_join("saves").path_join(campaign + ".sav")
 	if FileAccess.file_exists(path):
-		save = FileAccess.open("user://saves/" + campaign + ".sav", FileAccess.READ)
+		save = FileAccess.open(path, FileAccess.READ)
 		save_json = JSON.parse_string(save.get_as_text())
 		save.close()
 	else:
@@ -144,7 +152,8 @@ func clear_save() -> void:
 	visited_levels[0][0] = "1"
 	var save = SAVE_TEMPLATE.duplicate(true)
 	apply_save(save)
-	DirAccess.remove_absolute("user://saves/" + Global.current_campaign + ".sav")
+	var save_path = get_config_path().path_join("saves").path_join(Global.current_campaign + ".sav")
+	DirAccess.remove_absolute(save_path)
 	write_save(Global.current_campaign)
 
 func clear_array(arr := []) -> void:
@@ -166,9 +175,10 @@ func get_level_idx(world_num := 1, level_num := 1) -> int:
 	return ((world_num - 1) * 4) + (level_num - 1)
 
 func load_achievements() -> void:
-	if FileAccess.file_exists("user://achievements.sav") == false:
+	var path = get_config_path().path_join("achievements.sav")
+	if FileAccess.file_exists(path) == false:
 		write_achievements()
-	var file = FileAccess.open("user://achievements.sav", FileAccess.READ)
+	var file = FileAccess.open(path, FileAccess.READ)
 	var idx := 0
 	for i in file.get_as_text():
 		Global.achievements[idx] = i
@@ -177,6 +187,7 @@ func load_achievements() -> void:
 	file.close()
 
 func write_achievements() -> void:
-	var file = FileAccess.open("user://achievements.sav", FileAccess.WRITE)
+	var path = get_config_path().path_join("achievements.sav")
+	var file = FileAccess.open(path, FileAccess.WRITE)
 	file.store_string(Global.achievements)
 	file.close()

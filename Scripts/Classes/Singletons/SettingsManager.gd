@@ -4,6 +4,7 @@ var file := {
 	"video": {
 		"mode": 0,
 		"size": 0,
+		"scale": 0,
 		"vsync": 1,
 		"drop_shadows": 1,
 		"scaling": 0,
@@ -74,14 +75,23 @@ var file := {
 		"extra_checkpoints": 0,
 		"back_scroll": 0,
 		"time_limit": 1,
-		"lakitu_style": 0
+		"lakitu_style": 0,
+		"physics": 0
 	}
 }
 
-const SETTINGS_DIR := "user://settings.cfg"
+static func get_config_path() -> String:
+	var exe_dir = OS.get_executable_path().get_base_dir()
+	var portable_flag = exe_dir.path_join("portable.txt")
+	if FileAccess.file_exists(portable_flag):
+		return exe_dir.path_join("config")
+	else:
+		return "user://"
+	
+static var SETTINGS_DIR := get_config_path().path_join("settings.cfg")
 
 func _enter_tree() -> void:
-	DirAccess.make_dir_absolute("user://resource_packs")
+	DirAccess.make_dir_absolute(get_config_path().path_join("resource_packs"))
 	load_settings()
 	await get_tree().physics_frame
 	apply_settings()

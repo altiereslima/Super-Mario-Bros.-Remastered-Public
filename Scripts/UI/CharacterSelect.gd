@@ -41,10 +41,12 @@ func get_custom_characters() -> void:
 		idx += 1
 	print(Player.CHARACTER_NAMES)
 	
-	DirAccess.make_dir_recursive_absolute("user://custom_characters")
-	for i in DirAccess.get_directories_at("user://custom_characters"):
-		if FileAccess.file_exists("user://custom_characters/" + i + "/CharacterInfo.json"):
-			var char_path = "user://custom_characters/" + i + "/"
+	var char_dir = Global.config_path.path_join("custom_characters/")
+		
+	for i in DirAccess.get_directories_at(char_dir):
+		var char_info_path = char_dir.path_join(i).path_join("CharacterInfo.json")
+		if FileAccess.file_exists(char_info_path):
+			var char_path = char_dir.path_join(i) + "/"
 			var json = JSON.parse_string(FileAccess.open(char_path + "CharacterInfo.json", FileAccess.READ).get_as_text())
 			Player.CHARACTERS.append(i)
 			Player.CHARACTER_NAMES.append(json.name)

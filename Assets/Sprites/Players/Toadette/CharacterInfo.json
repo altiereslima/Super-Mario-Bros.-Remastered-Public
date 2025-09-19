@@ -19,6 +19,25 @@
 		"WALK_SKID": 8.0,
 		"WALK_SPEED": 90.0
 	},
+	"classic_physics": {
+		"AIR_ACCEL": 3.33984378,
+		"AIR_SKID": 2.2265625,
+		"DECEL": 3.046875,
+		"FALL_GRAVITY": 22.5,
+		"GROUND_RUN_ACCEL": 3.33984378,
+		"GROUND_WALK_ACCEL": 2.2265625,
+		"JUMP_GRAVITY": 9.375,
+		"JUMP_HEIGHT": 286.0,
+		"JUMP_INCR": 8.0,
+		"SWIM_GRAVITY": 2.34375,
+		"SWIM_SPEED": 95.0,
+		"MAX_FALL_SPEED": 270.0,
+		"MAX_SWIM_FALL_SPEED": 200,
+		"RUN_SKID": 6.09375,
+		"RUN_SPEED": 148,
+		"WALK_SKID": 6.09375,
+		"WALK_SPEED": 93.75
+	},
 	"small_hitbox_scale": [1.0, 1.0],
 	"big_hitbox_scale": [1.0, 1.0]
 }

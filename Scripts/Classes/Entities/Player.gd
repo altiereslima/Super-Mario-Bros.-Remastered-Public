@@ -151,6 +151,14 @@ var swim_stroke := false
 
 var simulated_velocity := Vector2.ZERO
 
+static func get_char_path() -> String:
+	var exe_dir = OS.get_executable_path().get_base_dir()
+	var portable_flag = exe_dir.path_join("portable.txt")
+	if FileAccess.file_exists(portable_flag):
+		return exe_dir.path_join("config/custom_characters")
+	else:
+		return "user://custom_characters/"
+	
 func _ready() -> void:
 	if classic_physics:
 		apply_classic_physics()
@@ -181,11 +189,18 @@ func _ready() -> void:
 func apply_character_physics() -> void:
 	var path = "res://Assets/Sprites/Players/" + character + "/CharacterInfo.json"
 	if int(Global.player_characters[player_id]) > 3:
-		path = path.replace("res://Assets/Sprites/Players", "user://custom_characters")
+		path = path.replace("res://Assets/Sprites/Players", get_char_path())
 	path = ResourceSetter.get_pure_resource_path(path)
 	var json = JSON.parse_string(FileAccess.open(path, FileAccess.READ).get_as_text())
 	for i in json.physics:
 		set(i, json.physics[i])
+	
+	# check for classic physics if classic mode is enabled
+	if Settings.file.difficulty.physics == 1:
+		# if classic physics are found overwrite
+		if json.has("classic_physics"):
+			for i in json.classic_physics:
+				set(i, json.classic_physics[i])
 	
 	for i in get_tree().get_nodes_in_group("SmallCollisions"):
 		var hitbox_scale = json.get("small_hitbox_scale", [1, 1])
@@ -281,7 +296,7 @@ func apply_gravity(delta: float) -> void:
 		elif gravity_vector.y < 0:
 			if velocity.y < 0:
 				gravity = FALL_GRAVITY
-	velocity += (gravity_vector * ((gravity / (1.5 if low_gravity else 1.0)) / delta)) * delta
+	velocity += (gravity_vector * ((gravity / (1.5 if low_gravity else 1.0)))) * delta * 60.0
 	var target_fall: float = MAX_FALL_SPEED
 	if in_water:
 		target_fall = MAX_SWIM_FALL_SPEED
@@ -311,7 +326,7 @@ func apply_character_sfx_map() -> void:
 	var custom_character := false
 	if int(Global.player_characters[player_id]) > 3:
 		custom_character = true
-		path = path.replace("res://Assets/Sprites/Players", "user://custom_characters")
+		path = path.replace("res://Assets/Sprites/Players", get_char_path())
 	path = ResourceSetter.get_pure_resource_path(path)
 	var json = JSON.parse_string(FileAccess.open(path, FileAccess.READ).get_as_text())
 	
@@ -321,7 +336,7 @@ func apply_character_sfx_map() -> void:
 		if FileAccess.file_exists(res_path) == false or custom_character:
 			var directory = "res://Assets/Sprites/Players/" + character + "/" + json[i]
 			if int(Global.player_characters[player_id]) > 3:
-				directory = directory.replace("res://Assets/Sprites/Players", "user://custom_characters")
+				directory = directory.replace("res://Assets/Sprites/Players", get_char_path())
 			directory = ResourceSetter.get_pure_resource_path(directory)
 			if FileAccess.file_exists(directory):
 				json[i] = directory
@@ -513,7 +528,7 @@ func do_i_frames() -> void:
 	refresh_hitbox()
 
 func die(pit := false) -> void:
-	if state_machine.state.name == "Dead" or state_machine.state.name == "Pipe":
+	if ["Dead", "Pipe", "LevelExit"].has(state_machine.state.name):
 		return
 	is_dead = true
 	visible = not pit
@@ -539,6 +554,8 @@ func die(pit := false) -> void:
 func death_load() -> void:
 	power_state = get_node("PowerStates/Small")
 	Global.player_power_states = "0000"
+	if Global.death_load:
+		return
 	Global.death_load = true
 	if Global.current_game_mode == Global.GameMode.CUSTOM_LEVEL:
 		LevelTransition.level_to_transition_to = "res://Scenes/Levels/LevelEditor.tscn"
@@ -561,6 +578,7 @@ func death_load() -> void:
 	else:
 		LevelPersistance.reset_states()
 		if Global.current_game_mode == Global.GameMode.BOO_RACE:
+			Global.death_load = false
 			Global.reset_values()
 			Global.clear_saved_values()
 			Level.start_level_path = Global.current_level.scene_file_path
@@ -646,7 +664,7 @@ func dispense_stored_item() -> void:
 func get_character_sprite_path(power_stateto_use := power_state.state_name) -> String:
 	var path = "res://Assets/Sprites/Players/" + character + "/" + power_stateto_use + ".json"
 	if int(Global.player_characters[player_id]) > 3:
-		path = path.replace("res://Assets/Sprites/Players", "user://custom_characters")
+		path = path.replace("res://Assets/Sprites/Players", get_char_path())
 	return path
 
 func enter_pipe(pipe: PipeArea, warp_to_level := true) -> void:
@@ -711,7 +729,13 @@ func jump() -> void:
 	has_jumped = true
 
 func calculate_jump_height() -> float: # Thanks wye love you xxx
-	return -(JUMP_HEIGHT + JUMP_INCR * int(abs(velocity.x) / 25))
+	# check if we're in classic mode
+	if Settings.file.difficulty.physics == 1:
+		# classic jump boost
+		return -(JUMP_HEIGHT + JUMP_INCR * float(abs(velocity.x) / 36.0))
+	else:
+		# remastered jump boost
+		return -(JUMP_HEIGHT + JUMP_INCR * int(abs(velocity.x) / 25))
 
 const SMOKE_PARTICLE = preload("res://Scenes/Prefabs/Particles/SmokeParticle.tscn")
 

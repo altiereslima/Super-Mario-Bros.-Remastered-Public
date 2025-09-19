@@ -140,7 +140,7 @@ region_rect = Rect2(60, 92, 30, 23)
 [node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/PickBlock"]
 modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
 layout_mode = 2
-text = "SELECIONAR PEÇA"
+text = "SELEC. PEÇA"
 uppercase = true
 
 [node name="TestLevel" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]

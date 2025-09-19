@@ -968,7 +968,7 @@ offset_left = 8.0
 offset_top = 16.0
 offset_right = 96.0
 offset_bottom = 32.0
-text = "BANNER + ÍCONE DO LSS"
+text = "Banner + Ícone do LSS"
 uppercase = true
 
 [node name="HSeparator" type="HSeparator" parent="Labels/LevelDesign/Label3"]
@@ -1207,7 +1207,7 @@ offset_left = 8.0
 offset_top = 184.0
 offset_right = 104.0
 offset_bottom = 200.0
-text = "PROGRAMAÇÃO"
+text = "Programação"
 uppercase = true
 
 [node name="HSeparator" type="HSeparator" parent="Labels/Sound/Label3"]

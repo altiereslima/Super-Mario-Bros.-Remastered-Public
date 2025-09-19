@@ -257,7 +257,7 @@ size_flags_vertical = 3
 theme_override_constants/separation = -4
 script = ExtResource("4_avtty")
 category_name = "SETTINGS_VIDEO"
-options = [NodePath("Language"), NodePath("WindowMode"), NodePath("Size"), NodePath("Visuals"), NodePath("Scaling"), NodePath("VSync"), NodePath("DropShadows"), NodePath("HudStyle"), NodePath("FrameLimit")]
+options = [NodePath("Language"), NodePath("WindowMode"), NodePath("Size"), NodePath("Scale"), NodePath("Visuals"), NodePath("Scaling"), NodePath("VSync"), NodePath("DropShadows"), NodePath("HudStyle"), NodePath("FrameLimit")]
 
 [node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/Video"]
 custom_minimum_size = Vector2(0, 4)
@@ -290,6 +290,12 @@ option_key = "size"
 title = "VIDEO_SIZE"
 values = ["VIDEO_ASPECT_OG", "VIDEO_ASPECT_WIDE"]
 selected = true
+
+[node name="Scale" parent="PanelContainer/MarginContainer/VBoxContainer/Video" groups=["Options"] instance=ExtResource("3_dl6kk")]
+layout_mode = 2
+option_key = "scale"
+title = "ESCALA DA JANELA"
+values = [1, 2, 3, 4, 5]
 
 [node name="Visuals" parent="PanelContainer/MarginContainer/VBoxContainer/Video" groups=["Options"] instance=ExtResource("3_dl6kk")]
 layout_mode = 2
@@ -537,7 +543,7 @@ size_flags_vertical = 3
 theme_override_constants/separation = -4
 script = ExtResource("4_avtty")
 category_name = "SETTINGS_DIFFICULTY"
-options = [NodePath("DamageStyle"), NodePath("Checkpoints"), NodePath("ExtraCheckpoints"), NodePath("Lives"), NodePath("FlagpoleLives"), NodePath("GameOverStyle"), NodePath("LevelDesign"), NodePath("BackScroll"), NodePath("TimeLimit"), NodePath("LakituStyle")]
+options = [NodePath("DamageStyle"), NodePath("Checkpoints"), NodePath("ExtraCheckpoints"), NodePath("Lives"), NodePath("FlagpoleLives"), NodePath("GameOverStyle"), NodePath("LevelDesign"), NodePath("BackScroll"), NodePath("TimeLimit"), NodePath("LakituStyle"), NodePath("Physics")]
 description_node = NodePath("Description/AutoScrollContainer/MarginContainer/Desc")
 
 [node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/Difficulty"]
@@ -622,6 +628,14 @@ option_key = "lakitu_style"
 title = "DIFFI_LAKITU"
 value_descs = Array[String](["DESC_LAKITU_0", "DESC_LAKITU_1"])
 values = ["DIFFI_LAKITU_0", "DIFFI_LAKITU_1"]
+settings_category = "difficulty"
+
+[node name="Physics" parent="PanelContainer/MarginContainer/VBoxContainer/Difficulty" groups=["Options"] instance=ExtResource("3_dl6kk")]
+layout_mode = 2
+option_key = "physics"
+title = "ESTILO DA FÍSICA"
+value_descs = Array[String](["DESC_PHYSICS_0", "DESC_PHYSICS_1"])
+values = ["DIFFI_PHYSICS_0", "DIFFI_PHYSICS_1"]
 settings_category = "difficulty"
 
 [node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/Difficulty"]
@@ -885,6 +899,7 @@ script = ExtResource("19_k6yev")
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/Video/Language" to="PanelContainer/MarginContainer/VBoxContainer/Video/WindowChanger" method="language_changed"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/Video/WindowMode" to="PanelContainer/MarginContainer/VBoxContainer/Video/WindowChanger" method="window_mode_changed"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/Video/Size" to="PanelContainer/MarginContainer/VBoxContainer/Video/WindowChanger" method="window_size_changed"]
+[connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/Video/Scale" to="PanelContainer/MarginContainer/VBoxContainer/Video/WindowChanger" method="window_scale_changed"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/Video/Visuals" to="PanelContainer/MarginContainer/VBoxContainer/Video/WindowChanger" method="visuals_changed"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/Video/Scaling" to="PanelContainer/MarginContainer/VBoxContainer/Video/WindowChanger" method="scaling_changed"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/Video/VSync" to="PanelContainer/MarginContainer/VBoxContainer/Video/WindowChanger" method="vsync_changed"]
@@ -921,6 +936,7 @@ script = ExtResource("19_k6yev")
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/Difficulty/BackScroll" to="PanelContainer/MarginContainer/VBoxContainer/Difficulty/DifficultySetter" method="backscroll_changed"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/Difficulty/TimeLimit" to="PanelContainer/MarginContainer/VBoxContainer/Difficulty/DifficultySetter" method="time_limit_changed"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/Difficulty/LakituStyle" to="PanelContainer/MarginContainer/VBoxContainer/Difficulty/DifficultySetter" method="lakitu_style_changed"]
+[connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/Difficulty/Physics" to="PanelContainer/MarginContainer/VBoxContainer/Difficulty/DifficultySetter" method="physics_style_changed"]
 [connection signal="deleted" from="PanelContainer/MarginContainer/VBoxContainer/Data/CampaignData" to="PanelContainer/MarginContainer/VBoxContainer/Data/DataDeletion" method="delete_story"]
 [connection signal="deleted" from="PanelContainer/MarginContainer/VBoxContainer/Data/ChallengeModeData" to="PanelContainer/MarginContainer/VBoxContainer/Data/DataDeletion" method="delete_challenge"]
 [connection signal="deleted" from="PanelContainer/MarginContainer/VBoxContainer/Data/BooRaceData" to="PanelContainer/MarginContainer/VBoxContainer/Data/DataDeletion" method="delete_boo"]

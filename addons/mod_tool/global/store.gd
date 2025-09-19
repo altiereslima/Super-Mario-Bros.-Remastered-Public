@@ -5,8 +5,14 @@ extends Node
 
 # Global store for all Data the ModTool requires.
 
+static func get_json_path() -> String:
+	var exe_dir = OS.get_executable_path().get_base_dir()
+	var portable_flag = exe_dir.path_join("portable.txt")
+	if FileAccess.file_exists(portable_flag):
+		return exe_dir.path_join("config/mod-tool-plugin-save.json")
+	else:
+		return "user://mod-tool-plugin-save.json"
 
-const PATH_SAVE_FILE := "user://mod-tool-plugin-save.json"
 const PATH_TEMPLATES_DIR := "res://addons/mod_tool/templates/"
 
 var editor_plugin: EditorPlugin
@@ -121,7 +127,7 @@ func save_store() -> void:
 		"mod_hook_preprocessor_hashmap": JSON.stringify(mod_hook_preprocessor.hashmap)
 	}
 
-	var file := FileAccess.open(PATH_SAVE_FILE, FileAccess.WRITE)
+	var file := FileAccess.open(get_json_path(), FileAccess.WRITE)
 	if not file:
 		ModToolUtils.output_error(str(FileAccess.get_open_error()))
 	file.store_string(JSON.stringify(save_data))
@@ -130,10 +136,10 @@ func save_store() -> void:
 
 # NOTE: Check if mod_dir still exists when loading
 func load_store() -> void:
-	if not FileAccess.file_exists(PATH_SAVE_FILE):
+	if not FileAccess.file_exists(get_json_path()):
 		return
 
-	var file := FileAccess.open(PATH_SAVE_FILE, FileAccess.READ)
+	var file := FileAccess.open(get_json_path(), FileAccess.READ)
 	if not file:
 		ModToolUtils.output_error(str(FileAccess.get_open_error()))
 	var content := file.get_as_text()

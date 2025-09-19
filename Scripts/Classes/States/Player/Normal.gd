@@ -59,9 +59,15 @@ func grounded(delta: float) -> void:
 			return
 		else:
 			player.jump()
+			# apply gravity on the first frame in classic mode
+			if Settings.file.difficulty.physics == 1:
+				player.apply_gravity(delta)
 	if jump_queued and not (player.in_water or player.flight_meter > 0):
 		if player.spring_bouncing == false:
 			player.jump()
+			# apply gravity on the first frame in classic mode
+			if Settings.file.difficulty.physics == 1:
+				player.apply_gravity(delta)
 		jump_queued = false
 	if not player.crouching:
 		if Global.player_action_pressed("move_down", player.player_id):
@@ -94,9 +100,10 @@ func handle_ground_movement(delta: float) -> void:
 func ground_acceleration(delta: float) -> void:
 	var target_move_speed := player.WALK_SPEED
 	if player.in_water or player.flight_meter > 0:
-		target_move_speed = 45
+		target_move_speed = 1.0625 * 60.0 # original 45
 	var target_accel := player.GROUND_WALK_ACCEL
-	if (Global.player_action_pressed("run", player.player_id) and abs(player.velocity.x) >= player.WALK_SPEED) and (not player.in_water and player.flight_meter <= 0) and player.can_run:
+	# always use run accel for classic physics
+	if (Global.player_action_pressed("run", player.player_id) and (abs(player.velocity.x) >= player.WALK_SPEED or Settings.file.difficulty.physics == 1) ) and (not player.in_water and player.flight_meter <= 0) and player.can_run:
 		target_move_speed = player.RUN_SPEED
 		target_accel = player.GROUND_RUN_ACCEL
 	if player.input_direction != player.velocity_direction:
@@ -105,14 +112,14 @@ func ground_acceleration(delta: float) -> void:
 		else:
 			target_accel = player.WALK_SKID
 	
-	player.velocity.x = move_toward(player.velocity.x, target_move_speed * player.input_direction, (target_accel / delta) * delta)
+	player.velocity.x = move_toward(player.velocity.x, target_move_speed * player.input_direction, (target_accel) * delta * 60.0)
 
 func deceleration(delta: float) -> void:
-	player.velocity.x = move_toward(player.velocity.x, 0, (player.DECEL / delta) * delta)
+	player.velocity.x = move_toward(player.velocity.x, 0, (player.DECEL) * delta * 60.0)
 
 func ground_skid(delta: float) -> void:
 	var target_skid := player.RUN_SKID
-	player.velocity.x = move_toward(player.velocity.x, 1 * player.input_direction, (target_skid / delta) * delta)
+	player.velocity.x = move_toward(player.velocity.x, 1 * player.input_direction, (target_skid) * delta * 60.0)
 	if abs(player.velocity.x) < 10 or player.input_direction == player.velocity_direction or player.input_direction == 0:
 		player.skidding = false
 
@@ -141,14 +148,16 @@ func handle_air_movement(delta: float) -> void:
 				player.velocity.y /= 1.5
 				player.gravity = player.FALL_GRAVITY
 
+
+
 func air_acceleration(delta: float) -> void:
 	var target_speed = player.WALK_SPEED
 	if abs(player.velocity.x) >= player.WALK_SPEED and Global.player_action_pressed("run", player.player_id) and player.can_run:
 		target_speed = player.RUN_SPEED
-	player.velocity.x = move_toward(player.velocity.x, target_speed * player.input_direction, (player.AIR_ACCEL / delta) * delta)
+	player.velocity.x = move_toward(player.velocity.x, target_speed * player.input_direction, (player.AIR_ACCEL) * delta * 60.0)
 
 func air_skid(delta: float) -> void:
-	player.velocity.x = move_toward(player.velocity.x, 1 * player.input_direction, (player.AIR_SKID / delta) * delta)
+	player.velocity.x = move_toward(player.velocity.x, 1 * player.input_direction, (player.AIR_SKID) * delta * 60.0)
 
 func handle_swimming(delta: float) -> void:
 	bubble_meter += delta
@@ -165,7 +174,7 @@ func handle_swimming(delta: float) -> void:
 		deceleration(delta)
 
 func swim_acceleration(delta: float) -> void:
-	player.velocity.x = move_toward(player.velocity.x, player.SWIM_SPEED * player.input_direction, (player.GROUND_WALK_ACCEL / delta) * delta)
+	player.velocity.x = move_toward(player.velocity.x, player.SWIM_SPEED * player.input_direction, (player.GROUND_WALK_ACCEL) * delta * 60.0)
 
 func swim_up() -> void:
 	if player.swim_stroke:

@@ -118,7 +118,7 @@ key = "version_number"
 label_text = "Versão"
 hint_text = "String de versão semântica.
 Apenas números inteiros e pontos permitidos.
-FormatO: {major}.{minor}.{patch}
+Formato: {major}.{minor}.{patch}
 Para referência, consulte https://semver.org"
 
 [node name="WebsiteUrl" parent="VBox/Panel/ScrollContainer/InputVBox" instance=ExtResource("2")]

@@ -157,7 +157,7 @@ alignment = 2
 [node name="ExportStatus" type="Label" parent="Panel/VSplit/Export/HSplit/Settings/VBox/Align"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Status da Exportação OK"
+text = "Status da Exportação: OK"
 
 [node name="Export" type="Button" parent="Panel/VSplit/Export/HSplit/Settings/VBox/Align"]
 layout_mode = 2

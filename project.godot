@@ -15,7 +15,7 @@ warnings/check_angle_interpolation_type_conflicting=false
 
 [application]
 
-config/name="SMB1R"
+config/name="Super Mario Bros. Remastered"
 run/main_scene="uid://bn66tnn8nlpi7"
 config/use_custom_user_dir=true
 config/features=PackedStringArray("4.5", "Forward Plus")
@@ -51,7 +51,7 @@ window/stretch/mode="viewport"
 
 [dotnet]
 
-project/assembly_name="SMB1R"
+project/assembly_name="Super Mario Bros. Remastered"
 
 [editor]
 

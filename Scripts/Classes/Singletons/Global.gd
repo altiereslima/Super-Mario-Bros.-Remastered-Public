@@ -31,11 +31,13 @@ var second_quest := false
 var extra_worlds_win := false
 const lang_codes := ["en", "fr", "es", "de", "it", "pt", "pl", "tr", "ru", "jp", "fil", "id", "ga"]
 
+var config_path : String
+
 var rom_path := ""
 var rom_assets_exist := false
-const ROM_POINTER_PATH := "user://rom_pointer.smb"
-const ROM_PATH := "user://baserom.nes"
-const ROM_ASSETS_PATH := "user://resource_packs/BaseAssets"
+var ROM_POINTER_PATH : String
+var ROM_PATH : String
+var ROM_ASSETS_PATH : String
 const ROM_PACK_NAME := "BaseAssets"
 const ROM_ASSETS_VERSION := 0
 
@@ -184,8 +186,43 @@ func _ready() -> void:
 	get_server_version()
 	if OS.is_debug_build():
 		debug_mode = false
+	setup_configs()
 	setup_discord_rpc()
 	check_for_rom()
+	
+func setup_configs() -> void:
+	config_path = get_config_path()
+	ROM_POINTER_PATH = config_path.path_join("rom_pointer.smb")
+	ROM_PATH = config_path.path_join("baserom.nes")
+	ROM_ASSETS_PATH = config_path.path_join("resource_packs/BaseAssets")
+	var custom_chars_dir = config_path.path_join("custom_characters")
+	var custom_levels_dir = config_path.path_join("custom_levels")
+	var logs_dir = config_path.path_join("logs")
+	var resource_packs_dir = config_path.path_join("resource_packs")
+	var saves_dir = config_path.path_join("saves")
+
+	for dir in [config_path, custom_chars_dir, custom_levels_dir, logs_dir, resource_packs_dir, saves_dir]:
+		if not DirAccess.dir_exists_absolute(dir):
+			DirAccess.make_dir_recursive_absolute(dir)
+
+func get_config_path() -> String:
+	var exe_path := OS.get_executable_path()
+	var exe_dir  := exe_path.get_base_dir()
+	var portable_flag := exe_dir.path_join("portable.txt")
+	
+	# Test that exe dir is writeable, if not fallback to user://
+	if FileAccess.file_exists(portable_flag):
+		var test_file = exe_dir.path_join("test.txt")
+		var f = FileAccess.open(test_file, FileAccess.WRITE)
+		if f:
+			f.close()
+			var dir = DirAccess.open(exe_dir)
+			if dir:
+				dir.remove(test_file.get_file())
+			return exe_dir.path_join("config")
+		else:
+			push_warning("Portable flag found but exe directory is not writeable. Falling back to user://")
+	return "user://"
 
 func check_for_rom() -> void:
 	rom_path = ""
@@ -352,7 +389,7 @@ func close_freeze() -> void:
 	$Transition/Freeze.hide()
 	$Transition.hide()
 
-var recording_dir = "user://marathon_recordings/"
+var recording_dir = config_path.path_join("marathon_recordings")
 
 func setup_discord_rpc() -> void:
 	DiscordRPC.app_id = 1331261692381757562

@@ -4,7 +4,6 @@ signal level_selected(container: CustomLevelContainer)
 
 const CUSTOM_LEVEL_CONTAINER = preload("uid://dt20tjug8m6oh")
 
-const CUSTOM_LEVEL_PATH := "user://custom_levels/"
 const base64_charset := "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
 
 signal closed
@@ -12,6 +11,14 @@ signal closed
 var containers := []
 
 var selected_lvl_idx := -1
+
+static func get_level_path() -> String:
+	var exe_dir = OS.get_executable_path().get_base_dir()
+	var portable_flag = exe_dir.path_join("portable.txt")
+	if FileAccess.file_exists(portable_flag):
+		return exe_dir.path_join("config/custom_levels")
+	else:
+		return "user://custom_levels/"
 
 func open(refresh_list := true) -> void:
 	show()
@@ -25,7 +32,8 @@ func open(refresh_list := true) -> void:
 	set_process(true)
 
 func open_folder() -> void:
-	OS.shell_show_in_file_manager(ProjectSettings.globalize_path(CUSTOM_LEVEL_PATH))
+	var custom_level_path = get_level_path()
+	OS.shell_show_in_file_manager(ProjectSettings.globalize_path(custom_level_path))
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_back"):
@@ -41,11 +49,12 @@ func refresh() -> void:
 		if i is CustomLevelContainer:
 			i.queue_free()
 	containers.clear()
-	get_levels("user://custom_levels")
-	get_levels("user://custom_levels/downloaded")
+	get_levels(get_level_path())
+	get_levels(get_level_path().path_join("downloaded"))
 
-func get_levels(path := "user://custom_levels") -> void:
-	DirAccess.make_dir_recursive_absolute(path)
+func get_levels(path : String = "") -> void:
+	if path == "":
+		path = get_level_path()
 	var idx := 0
 	for i in DirAccess.get_files_at(path):
 		if i.contains(".lvl") == false:

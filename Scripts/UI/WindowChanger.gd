@@ -1,6 +1,14 @@
 extends Node
 
 func window_mode_changed(new_value := 0) -> void:
+	# Adicionado para redefinir a escala ao entrar em tela cheia
+	if new_value == 2: # 2 é o valor para tela cheia
+		# Redefine o tamanho da viewport para o padrão do projeto.
+		# Isso evita que o jogo entre em tela cheia com uma viewport de tamanho incorreto.
+		get_viewport().size = Vector2(ProjectSettings.get_setting("display/window/size/viewport_width"), ProjectSettings.get_setting("display/window/size/viewport_height"))
+		# Também redefine a configuração de escala salva.
+		Settings.file.video.scale = 0
+
 	match new_value:
 		0:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
@@ -19,6 +27,16 @@ func null_function(_fuck_you := 0) -> void:
 func window_size_changed(new_value := 0) -> void:
 	get_tree().root.content_scale_aspect = Window.CONTENT_SCALE_ASPECT_EXPAND if new_value == 1 else Window.CONTENT_SCALE_ASPECT_KEEP
 	Settings.file.video.size = new_value
+
+func window_scale_changed(new_value := 0) -> void:
+	# Adicionada uma verificação para aplicar a escala apenas em modo janela.
+	# Se o modo for 2 (tela cheia), a função não fará nada.
+	if Settings.file.video.mode == 2:
+		return
+
+	get_viewport().size = Vector2(ProjectSettings.get_setting("display/window/size/viewport_width"),ProjectSettings.get_setting("display/window/size/viewport_height")) *  (new_value + 1)
+	Settings.file.video.scale = new_value
+
 
 func vsync_changed(new_value := 0) -> void:
 	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED if new_value == 1 else DisplayServer.VSYNC_DISABLED)
@@ -62,6 +80,7 @@ func frame_limit_changed(new_value := 0) -> void:
 func set_value(value_name := "", value := 0) -> void:
 	{
 		"mode": window_mode_changed,
+		"scale": window_scale_changed,
 		"size": window_size_changed,
 		"vsync": vsync_changed,
 		"drop_shadows": drop_shadows_changed,
