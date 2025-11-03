@@ -45,7 +45,7 @@ anchor_bottom = 1.0
 offset_top = -16.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "EXTRACTING ASSETS..."
+text = "EXTRAINDO RECURSOS..."
 horizontal_alignment = 1
 uppercase = true
 
@@ -53,7 +53,7 @@ uppercase = true
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
-text = "ERROR
+text = "ERRO
 MISSING SPRITE JSON(S)"
 horizontal_alignment = 1
 

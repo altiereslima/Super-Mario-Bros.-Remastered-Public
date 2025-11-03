@@ -8,7 +8,7 @@ static var updating := false
 
 func _ready() -> void:
 	Global.get_node("GameHUD").hide()
-	if updating: $MarginContainer/ProgressBar/Label.text = "UPDATING ASSETS..."
+	if updating: $MarginContainer/ProgressBar/Label.text = "ATUALIZANDO ATIVOS..."
 	rom = FileAccess.get_file_as_bytes(Global.rom_path)
 	prg_rom_size = rom[4] * 16384
 	chr_rom = rom.slice(16 + prg_rom_size)

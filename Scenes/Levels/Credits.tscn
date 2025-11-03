@@ -348,7 +348,7 @@ offset_top = -8.0
 offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Created by JoeMama"
+text = "Criado por JoeMama"
 horizontal_alignment = 1
 uppercase = true
 metadata/time = 2
@@ -370,7 +370,7 @@ offset_left = 8.0
 offset_top = 16.0
 offset_right = 112.0
 offset_bottom = 32.0
-text = "Tile Artists"
+text = "Artistas de Blocos"
 uppercase = true
 
 [node name="HSeparator" type="HSeparator" parent="Labels/TileArtists/Label"]
@@ -516,7 +516,7 @@ offset_left = 16.0
 offset_top = 16.0
 offset_right = 104.0
 offset_bottom = 32.0
-text = "BG ARTISTS"
+text = "Artistas de Fundo"
 uppercase = true
 
 [node name="HSeparator" type="HSeparator" parent="Labels/BGArtists/Label"]
@@ -662,7 +662,7 @@ offset_left = 16.0
 offset_top = 8.0
 offset_right = 128.0
 offset_bottom = 24.0
-text = "ENEMY, PLAYER, NPC ARTISTS"
+text = "Artistas de Inimigos, Jogador e NPCs"
 uppercase = true
 
 [node name="HSeparator" type="HSeparator" parent="Labels/EnemyArtists/Label"]
@@ -851,7 +851,7 @@ offset_left = 8.0
 offset_top = 112.0
 offset_right = 112.0
 offset_bottom = 128.0
-text = "Level Design"
+text = "Design de Fases"
 uppercase = true
 
 [node name="HSeparator" type="HSeparator" parent="Labels/LevelDesign/Label"]
@@ -1010,7 +1010,7 @@ offset_left = 8.0
 offset_top = 56.0
 offset_right = 136.0
 offset_bottom = 72.0
-text = "UI DESIGN + ART"
+text = "Interface do Usuário e Arte"
 horizontal_alignment = 1
 uppercase = true
 
@@ -1073,7 +1073,7 @@ offset_left = 8.0
 offset_top = 16.0
 offset_right = 96.0
 offset_bottom = 32.0
-text = "LSS BANNER + ICON"
+text = "Banner + Ícone do LSS"
 uppercase = true
 
 [node name="HSeparator" type="HSeparator" parent="Labels/LevelDesign/Label3"]
@@ -1135,7 +1135,7 @@ offset_left = 8.0
 offset_top = 16.0
 offset_right = 88.0
 offset_bottom = 32.0
-text = "Composers"
+text = "Compositores"
 uppercase = true
 
 [node name="HSeparator" type="HSeparator" parent="Labels/Sound/Label"]
@@ -1364,7 +1364,7 @@ offset_left = 8.0
 offset_top = 8.0
 offset_right = 104.0
 offset_bottom = 24.0
-text = "localizers"
+text = "Tradutores"
 uppercase = true
 
 [node name="HSeparator" type="HSeparator" parent="Labels/Localizers/Label"]
@@ -1814,7 +1814,7 @@ offset_left = 8.0
 offset_top = 8.0
 offset_right = 112.0
 offset_bottom = 24.0
-text = "Beta Testers"
+text = "Testadores Beta"
 uppercase = true
 
 [node name="HSeparator" type="HSeparator" parent="Labels/BetaTesters/Label"]
@@ -2131,7 +2131,7 @@ offset_left = 16.0
 offset_top = 16.0
 offset_right = 144.0
 offset_bottom = 32.0
-text = "Beta Testers..."
+text = "Testadores Beta..."
 uppercase = true
 
 [node name="HSeparator" type="HSeparator" parent="Labels/BetaTesters2/Label"]
@@ -2360,7 +2360,7 @@ offset_top = 8.0
 offset_right = 80.0
 offset_bottom = 24.0
 grow_horizontal = 2
-text = "GITHUB CONTRIBUTORS"
+text = "Colaboradores do Github"
 uppercase = true
 
 [node name="HSeparator" type="HSeparator" parent="Labels/Github/Label3"]
@@ -2929,7 +2929,7 @@ offset_right = 56.0
 offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Special Thanks"
+text = "Agradecimentos Especiais"
 horizontal_alignment = 1
 uppercase = true
 
@@ -3010,7 +3010,7 @@ uppercase = true
 [node name="Label10" type="Label" parent="Labels/SpecialThanks/Label/HFlowContainer"]
 layout_mode = 2
 text = "
-...and you!"
+...e você!"
 uppercase = true
 
 [node name="MadeWith" type="Control" parent="Labels"]
@@ -3038,7 +3038,7 @@ offset_right = 40.0
 offset_bottom = -88.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Made With"
+text = "Feito Com"
 horizontal_alignment = 1
 uppercase = true
 
@@ -3093,7 +3093,7 @@ offset_top = 17.0
 offset_right = 68.0
 offset_bottom = 33.0
 grow_horizontal = 2
-text = "original game by"
+text = "jogo original por"
 horizontal_alignment = 1
 uppercase = true
 
@@ -3146,7 +3146,7 @@ offset_top = -8.0
 offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Thank you for Playing! :)"
+text = "Obrigado por Jogar! :)"
 horizontal_alignment = 1
 uppercase = true
 
@@ -3158,7 +3158,7 @@ anchor_bottom = 1.0
 offset_top = -16.0
 offset_right = 168.0
 grow_vertical = 0
-text = "Press Any To Skip..."
+text = "Pressione Qualquer Tecla para Pular..."
 uppercase = true
 
 [node name="LabelFontChanger" type="Node" parent="." node_paths=PackedStringArray("labels")]

@@ -4651,7 +4651,7 @@ size_flags_horizontal = 10
 [node name="ThemeName" type="Label" parent="TileMenu/MarginContainer/VBoxContainer/PanelContainer/LEVEL/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "OVERWORLD"
+text = "SUPERFÍCIE"
 uppercase = true
 
 [node name="Button" type="Button" parent="TileMenu/MarginContainer/VBoxContainer/PanelContainer/LEVEL/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
@@ -4681,15 +4681,15 @@ layout_mode = 2
 size_flags_horizontal = 10
 selected = 0
 item_count = 5
-popup/item_0/text = "ROOM 0"
+popup/item_0/text = "SALA 0"
 popup/item_0/id = 0
-popup/item_1/text = "ROOM 1"
+popup/item_1/text = "SALA 1"
 popup/item_1/id = 1
-popup/item_2/text = "ROOM 2"
+popup/item_2/text = "SALA 2"
 popup/item_2/id = 2
-popup/item_3/text = "ROOM 3"
+popup/item_3/text = "SALA 3"
 popup/item_3/id = 3
-popup/item_4/text = "ROOM 4"
+popup/item_4/text = "SALA 4"
 popup/item_4/id = 4
 script = ExtResource("241_8au2b")
 metadata/_custom_type_script = "uid://codql1f5eca56"
@@ -4833,7 +4833,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="TileMenu/MarginContainer/VBoxContainer/PanelContainer/BG/ScrollContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "1ST LAYER:"
+text = "CAMADA 1:"
 
 [node name="PrimaryLayer" type="OptionButton" parent="TileMenu/MarginContainer/VBoxContainer/PanelContainer/BG/ScrollContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
@@ -4843,11 +4843,11 @@ layout_mode = 2
 size_flags_horizontal = 10
 selected = 0
 item_count = 3
-popup/item_0/text = "HILLS"
+popup/item_0/text = "COLINAS"
 popup/item_0/id = 0
-popup/item_1/text = "BUSH"
+popup/item_1/text = "ARBUSTO"
 popup/item_1/id = 1
-popup/item_2/text = "NONE"
+popup/item_2/text = "NADA"
 popup/item_2/id = 2
 script = ExtResource("241_8au2b")
 metadata/_custom_type_script = "uid://codql1f5eca56"
@@ -4857,7 +4857,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="TileMenu/MarginContainer/VBoxContainer/PanelContainer/BG/ScrollContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-text = "2ND LAYER:"
+text = "CAMADA 2:"
 
 [node name="SecondLayer" type="OptionButton" parent="TileMenu/MarginContainer/VBoxContainer/PanelContainer/BG/ScrollContainer/VBoxContainer/HBoxContainer2"]
 unique_name_in_owner = true
@@ -4867,11 +4867,11 @@ layout_mode = 2
 size_flags_horizontal = 10
 selected = 0
 item_count = 3
-popup/item_0/text = "NONE"
+popup/item_0/text = "NADA"
 popup/item_0/id = 0
-popup/item_1/text = "MUSHROOMS"
+popup/item_1/text = "COGUMELOS"
 popup/item_1/id = 1
-popup/item_2/text = "TREES"
+popup/item_2/text = "ÁRVORES"
 popup/item_2/id = 2
 script = ExtResource("241_8au2b")
 metadata/_custom_type_script = "uid://codql1f5eca56"
@@ -4881,7 +4881,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="TileMenu/MarginContainer/VBoxContainer/PanelContainer/BG/ScrollContainer/VBoxContainer/HBoxContainer7"]
 layout_mode = 2
-text = "2ND LAYER:"
+text = "CAMADA 2:"
 
 [node name="SecondLayerOrder" type="OptionButton" parent="TileMenu/MarginContainer/VBoxContainer/PanelContainer/BG/ScrollContainer/VBoxContainer/HBoxContainer7"]
 unique_name_in_owner = true
@@ -4891,9 +4891,9 @@ layout_mode = 2
 size_flags_horizontal = 10
 selected = 0
 item_count = 2
-popup/item_0/text = "BEHIND"
+popup/item_0/text = "ATRÁS"
 popup/item_0/id = 0
-popup/item_1/text = "IN FRONT"
+popup/item_1/text = "NA FRENTE"
 popup/item_1/id = 1
 script = ExtResource("241_8au2b")
 metadata/_custom_type_script = "uid://codql1f5eca56"
@@ -4904,7 +4904,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="TileMenu/MarginContainer/VBoxContainer/PanelContainer/BG/ScrollContainer/VBoxContainer/HBoxContainer8"]
 layout_mode = 2
-text = "2ND LAYER:"
+text = "CAMADA 2:"
 
 [node name="TimeOfDay" type="OptionButton" parent="TileMenu/MarginContainer/VBoxContainer/PanelContainer/BG/ScrollContainer/VBoxContainer/HBoxContainer8"]
 unique_name_in_owner = true
@@ -4914,9 +4914,9 @@ layout_mode = 2
 size_flags_horizontal = 10
 selected = 0
 item_count = 2
-popup/item_0/text = "BEHIND"
+popup/item_0/text = "ATRÁS"
 popup/item_0/id = 0
-popup/item_1/text = "IN FRONT"
+popup/item_1/text = "NA FRENTE"
 popup/item_1/id = 1
 script = ExtResource("241_8au2b")
 metadata/_custom_type_script = "uid://codql1f5eca56"
@@ -4926,7 +4926,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="TileMenu/MarginContainer/VBoxContainer/PanelContainer/BG/ScrollContainer/VBoxContainer/HBoxContainer4"]
 layout_mode = 2
-text = "2ND LAYER OFFSET"
+text = "DESLOCAMENTO DA CAMADA 2"
 
 [node name="SecondLayerOffset" type="SpinBox" parent="TileMenu/MarginContainer/VBoxContainer/PanelContainer/BG/ScrollContainer/VBoxContainer/HBoxContainer4"]
 unique_name_in_owner = true
@@ -4941,7 +4941,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="TileMenu/MarginContainer/VBoxContainer/PanelContainer/BG/ScrollContainer/VBoxContainer/HBoxContainer5"]
 layout_mode = 2
-text = "PARTICLES:"
+text = "PARTÍCULAS:"
 
 [node name="Particles" type="OptionButton" parent="TileMenu/MarginContainer/VBoxContainer/PanelContainer/BG/ScrollContainer/VBoxContainer/HBoxContainer5"]
 unique_name_in_owner = true
@@ -4951,13 +4951,13 @@ layout_mode = 2
 size_flags_horizontal = 10
 selected = 0
 item_count = 4
-popup/item_0/text = "NONE"
+popup/item_0/text = "NADA"
 popup/item_0/id = 0
-popup/item_1/text = "SNOW"
+popup/item_1/text = "NEVE"
 popup/item_1/id = 1
-popup/item_2/text = "LEAVES"
+popup/item_2/text = "FOLHAS"
 popup/item_2/id = 1
-popup/item_3/text = "EMBER"
+popup/item_3/text = "BRASA"
 popup/item_3/id = 3
 script = ExtResource("241_8au2b")
 metadata/_custom_type_script = "uid://codql1f5eca56"
@@ -4967,7 +4967,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="TileMenu/MarginContainer/VBoxContainer/PanelContainer/BG/ScrollContainer/VBoxContainer/HBoxContainer6"]
 layout_mode = 2
-text = "LIQUID:"
+text = "LÍQUIDO:"
 
 [node name="LiquidLayer" type="OptionButton" parent="TileMenu/MarginContainer/VBoxContainer/PanelContainer/BG/ScrollContainer/VBoxContainer/HBoxContainer6"]
 unique_name_in_owner = true
@@ -4977,13 +4977,13 @@ layout_mode = 2
 size_flags_horizontal = 10
 selected = 0
 item_count = 4
-popup/item_0/text = "NONE"
+popup/item_0/text = "NADA"
 popup/item_0/id = 0
-popup/item_1/text = "WATER"
+popup/item_1/text = "ÁGUA"
 popup/item_1/id = 1
 popup/item_2/text = "LAVA"
 popup/item_2/id = 2
-popup/item_3/text = "POISON"
+popup/item_3/text = "VENENO"
 popup/item_3/id = 3
 script = ExtResource("241_8au2b")
 metadata/_custom_type_script = "uid://codql1f5eca56"
@@ -4994,7 +4994,7 @@ layout_mode = 2
 [node name="Backscroll" type="Label" parent="TileMenu/MarginContainer/VBoxContainer/PanelContainer/BG/ScrollContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "OVERLAY CLOUDS:"
+text = "NUVENS SOBREPOSTAS:"
 uppercase = true
 
 [node name="OverlayClouds" type="CheckBox" parent="TileMenu/MarginContainer/VBoxContainer/PanelContainer/BG/ScrollContainer/VBoxContainer/HBoxContainer3"]
@@ -5020,7 +5020,7 @@ grow_vertical = 0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 7
-text = "e to open menu"
+text = "e para abrir o menu"
 uppercase = true
 
 [node name="LayerDisplay" type="Control" parent="Info"]
@@ -5088,7 +5088,7 @@ offset_right = 39.0
 offset_bottom = -1.0
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-text = "layer 1"
+text = "camada 1"
 uppercase = true
 
 [node name="ControllerInputWarning" type="Label" parent="Info"]
@@ -5129,7 +5129,7 @@ offset_left = -84.0
 offset_right = 84.0
 offset_bottom = 16.0
 grow_horizontal = 2
-text = "Save Before Exiting?"
+text = "Salvar antes de sair?"
 uppercase = true
 
 [node name="Yes" type="Button" parent="Info/QuitDialog"]
@@ -5138,7 +5138,7 @@ offset_left = 10.0
 offset_top = 18.0
 offset_right = 58.0
 offset_bottom = 42.0
-text = "YES"
+text = "SIM"
 
 [node name="No" type="Button" parent="Info/QuitDialog"]
 layout_mode = 0
@@ -5146,7 +5146,7 @@ offset_left = 66.0
 offset_top = 18.0
 offset_right = 114.0
 offset_bottom = 42.0
-text = "NO"
+text = "NÃO"
 
 [node name="Cancel" type="Button" parent="Info/QuitDialog"]
 layout_mode = 0
@@ -5154,7 +5154,7 @@ offset_left = 122.0
 offset_top = 18.0
 offset_right = 186.0
 offset_bottom = 42.0
-text = "CANCEL"
+text = "CANCELAR"
 
 [node name="SaveLevelDialog" type="PanelContainer" parent="Info"]
 unique_name_in_owner = true
@@ -5174,7 +5174,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Info/SaveLevelDialog/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Save Level"
+text = "Salvar Fase"
 uppercase = true
 
 [node name="HSeparator" type="HSeparator" parent="Info/SaveLevelDialog/VBoxContainer/Label"]
@@ -5193,7 +5193,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="Info/SaveLevelDialog/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "Level Name:"
+text = "Nome da Fase:"
 uppercase = true
 
 [node name="LevelName" type="LineEdit" parent="Info/SaveLevelDialog/VBoxContainer/HBoxContainer"]
@@ -5211,7 +5211,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="Info/SaveLevelDialog/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-text = "Author:"
+text = "Autor:"
 uppercase = true
 
 [node name="LevelAuthor" type="LineEdit" parent="Info/SaveLevelDialog/VBoxContainer/HBoxContainer2"]
@@ -5231,7 +5231,7 @@ size_flags_vertical = 3
 [node name="Label" type="Label" parent="Info/SaveLevelDialog/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 size_flags_vertical = 0
-text = "desc:"
+text = "desc.:"
 uppercase = true
 
 [node name="TextValidator" type="Node" parent="Info/SaveLevelDialog/VBoxContainer/HBoxContainer3" node_paths=PackedStringArray("node_to_validate")]
@@ -5250,7 +5250,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Info/SaveLevelDialog/VBoxContainer/HBoxContainer4"]
 layout_mode = 2
 size_flags_vertical = 0
-text = "difficulty"
+text = "dificuldade"
 uppercase = true
 
 [node name="TextValidator" type="Node" parent="Info/SaveLevelDialog/VBoxContainer/HBoxContainer4"]
@@ -5271,12 +5271,12 @@ layout_mode = 2
 [node name="Button2" type="Button" parent="Info/SaveLevelDialog/VBoxContainer/HSplitContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
-text = "CANCEL"
+text = "CANCELAR"
 
 [node name="Button" type="Button" parent="Info/SaveLevelDialog/VBoxContainer/HSplitContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
-text = "SAVE"
+text = "SALVAR"
 
 [node name="SaveDialog" type="Label" parent="Info"]
 unique_name_in_owner = true
@@ -5288,7 +5288,7 @@ offset_left = -120.0
 offset_bottom = 18.25
 grow_horizontal = 0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-text = "\"level.lvl\" saved."
+text = "\"level.lvl\" salva."
 uppercase = true
 
 [node name="SaveAnimation" type="AnimationPlayer" parent="Info/SaveDialog"]

@@ -56,7 +56,7 @@ func _process(_delta: float) -> void:
 func update_value() -> void:
 	$Title.text = tr(title) + ":"
 	if awaiting_input:
-		$Value.text = "Press Any..."
+		$Value.text = "Aperte Algo..."
 	else:
 		if current_binding_idx == 0:
 			$Value.text = "(" + get_event_string(input_events[0]) + "), " + get_event_string(input_events[1]) + " "

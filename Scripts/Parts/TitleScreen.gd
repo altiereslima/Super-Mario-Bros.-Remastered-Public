@@ -86,7 +86,7 @@ func open_story_options() -> void:
 		await %QuestSelect.selected
 	$CanvasLayer/StoryMode/StoryOptions.selected_index = 1
 	%Options2.close()
-	$CanvasLayer/StoryMode/StoryOptions/HighScore.text = "Top- " + str(Global.high_score).pad_zeros(6)
+	$CanvasLayer/StoryMode/StoryOptions/HighScore.text = "Maior- " + str(Global.high_score).pad_zeros(6)
 	$CanvasLayer/Options1.close()
 	$CanvasLayer/StoryMode/StoryOptions.open()
 
@@ -117,7 +117,7 @@ func check_for_ghost() -> void:
 		$CanvasLayer/MarathonMode/HasWarp/CharacterSelect.open()
 
 func get_highscore() -> void:
-	%HighScore.text = "TOP- " + str(Global.high_score).pad_zeros(6)
+	%HighScore.text = "MAIOR- " + str(Global.high_score).pad_zeros(6)
 	if Global.world_num == 1 and Global.level_num == 1 and Global.score <= 0:
 		%StoryOptions.selected_index = 0
 	else:

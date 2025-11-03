@@ -825,7 +825,7 @@ offset_left = 1.0
 offset_top = 4.0
 offset_right = 105.0
 offset_bottom = 27.0
-text = "your"
+text = "você"
 uppercase = true
 
 [node name="Results" type="Label" parent="SpeechBubble/Your"]
@@ -835,7 +835,7 @@ offset_left = 27.0
 offset_top = 8.0
 offset_right = 131.0
 offset_bottom = 31.0
-text = "results"
+text = "resultados"
 uppercase = true
 
 [node name="Coins" type="Label" parent="SpeechBubble"]
@@ -1018,7 +1018,7 @@ offset_left = -112.0
 offset_top = -112.0
 offset_right = -64.0
 offset_bottom = -89.0
-text = "world"
+text = "mundo"
 uppercase = true
 
 [node name="WorldLevel" type="Label" parent="."]

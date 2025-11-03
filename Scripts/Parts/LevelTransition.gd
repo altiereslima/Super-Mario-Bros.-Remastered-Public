@@ -76,7 +76,7 @@ func _ready() -> void:
 	
 	if Global.current_game_mode == Global.GameMode.CAMPAIGN:
 		SaveManager.write_save(Global.current_campaign)
-	DiscordManager.set_discord_status("Playing " + Global.current_campaign + ": " + str(world_num) + "-" + str(Global.level_num))
+	DiscordManager.set_discord_status("Jogando " + Global.current_campaign + ": " + str(world_num) + "-" + str(Global.level_num))
 	$BG/Control/WorldNum.text = str(world_num) +"-" + str(Global.level_num)
 	if [Global.GameMode.CUSTOM_LEVEL, Global.GameMode.LEVEL_EDITOR].has(Global.current_game_mode):
 		$BG/Control/LivesCount.text = "☠ * " + str(Global.total_deaths)
@@ -131,7 +131,7 @@ func transition() -> void:
 func show_best_time() -> void:
 	var best_time = SpeedrunHandler.best_time
 	if SpeedrunHandler.best_time <= 0:
-		$BG/Control/MarathonPB.text = "\nNO PB"
+		$BG/Control/MarathonPB.text = "\nSEM REC"
 		return
 	var string = "PB\n" + SpeedrunHandler.gen_time_string(SpeedrunHandler.format_time(SpeedrunHandler.best_time))
 	$BG/Control/MarathonPB.text = string

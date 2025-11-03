@@ -916,25 +916,7 @@ color = Color(0, 0, 0, 1)
 [node name="Timer" type="Timer" parent="CanvasLayer2/VersionLabel"]
 autostart = true
 
-[node name="DevBuildWarning" type="Label" parent="CanvasLayer2/VersionLabel"]
-visible = false
-layout_mode = 1
-offset_top = 16.0
-offset_right = 56.0
-offset_bottom = 32.0
-text = "DEVELOPMENT BUILD! EXPECT BUGS!"
-uppercase = true
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer2/VersionLabel/DevBuildWarning"]
-show_behind_parent = true
-custom_minimum_size = Vector2(0, 8)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
 
 [node name="DropShadow" parent="." instance=ExtResource("5_8t4ah")]
 

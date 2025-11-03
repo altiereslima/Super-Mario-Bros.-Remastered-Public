@@ -1,5 +1,9 @@
 extends Node
 
+# Variáveis para ocultar o mouse por inatividade
+var hide_mouse_timer: Timer
+export var mouse_hide_delay := 3.0 # Tempo em segundos para esconder o mouse
+
 var level_theme := "Overworld":
 	set(value):
 		level_theme = value
@@ -193,6 +197,27 @@ func _ready() -> void:
 		debug_mode = false
 	setup_config_dirs()
 	check_for_rom()
+
+	# Configuração para ocultar o mouse por inatividade
+	hide_mouse_timer = Timer.new()
+	hide_mouse_timer.wait_time = mouse_hide_delay
+	hide_mouse_timer.one_shot = true
+	hide_mouse_timer.timeout.connect(_on_hide_mouse_timer_timeout)
+	add_child(hide_mouse_timer)
+	# Oculta o mouse no início para garantir um estado limpo
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+
+
+func _input(event: InputEvent) -> void:
+	# Verifica se o evento é um movimento do mouse
+	if event is InputEventMouseMotion:
+		# Se o mouse se moveu, exibe o cursor e reinicia o timer
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		hide_mouse_timer.start()
+
+func _on_hide_mouse_timer_timeout() -> void:
+	# Quando o timer termina, esconde o cursor do mouse
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func setup_config_dirs() -> void:
 	var dirs = [
@@ -397,8 +422,6 @@ func transition_to_scene(scene_path := "") -> void:
 	transitioning_scene = false
 	transition_finished.emit()
 
-
-
 func do_fake_transition(duration := 0.2) -> void:
 	if fade_transition:
 		$Transition/AnimationPlayer.play("FadeIn")
@@ -508,3 +531,5 @@ func get_base_asset_version() -> int:
 
 func get_version_num_int(ver_num := "0.0.0") -> int:
 	return int(ver_num.replace(".", ""))
+
+```

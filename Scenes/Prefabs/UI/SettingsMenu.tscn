@@ -363,8 +363,8 @@ values = ["VIDEO_HUD_STRETCHED", "VIDEO_HUD_CENTER"]
 [node name="FrameLimit" parent="PanelContainer/MarginContainer/VBoxContainer/Video" instance=ExtResource("3_dl6kk")]
 layout_mode = 2
 option_key = "frame_limit"
-title = "FRAME LIMIT"
-values = ["Unlimited", "60fps", "120fps", "144fps", "240fps"]
+title = "LIMITE DE QUADROS"
+values = ["Ilimitado", "60fps", "120fps", "144fps", "240fps"]
 
 [node name="WindowChanger" type="Node" parent="PanelContainer/MarginContainer/VBoxContainer/Video"]
 script = ExtResource("5_hnwhb")
@@ -526,14 +526,14 @@ settings_category = "visuals"
 [node name="FirebarStyle" parent="PanelContainer/MarginContainer/VBoxContainer/Visuals" groups=["Options"] instance=ExtResource("3_dl6kk")]
 layout_mode = 2
 option_key = "firebar_style"
-title = "FIREBAR STYLE"
-values = ["Classic", "Modern"]
+title = "ESTILO DA BARRA DE FOGO"
+values = ["Clássica", "Moderna"]
 settings_category = "visuals"
 
 [node name="ExtraParticles" parent="PanelContainer/MarginContainer/VBoxContainer/Visuals" groups=["Options"] instance=ExtResource("3_dl6kk")]
 layout_mode = 2
 option_key = "extra_particles"
-title = "EXTRA EFFECTS"
+title = "EFEITOS EXTRAS"
 values = ["SETTING_OFF", "SETTING_ON"]
 settings_category = "visuals"
 
@@ -773,17 +773,17 @@ title = "ACTION_DOWN"
 [node name="Accept" parent="PanelContainer/MarginContainer/VBoxContainer/KeyboardControls" groups=["Options"] instance=ExtResource("9_ksnto")]
 layout_mode = 2
 action_names = ["ui_accept"]
-title = "ACCEPT"
+title = "ACEITAR"
 
 [node name="Back" parent="PanelContainer/MarginContainer/VBoxContainer/KeyboardControls" groups=["Options"] instance=ExtResource("9_ksnto")]
 layout_mode = 2
 action_names = ["ui_back"]
-title = "BACK"
+title = "VOLTAR"
 
 [node name="Pause" parent="PanelContainer/MarginContainer/VBoxContainer/KeyboardControls" groups=["Options"] instance=ExtResource("9_ksnto")]
 layout_mode = 2
 action_names = ["pause"]
-title = "PAUSE"
+title = "PAUSA"
 
 [node name="InputMapSaving" type="Node" parent="PanelContainer/MarginContainer/VBoxContainer/KeyboardControls" groups=["Options"]]
 process_mode = 3
@@ -792,7 +792,7 @@ script = SubResource("GDScript_ksnto")
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/KeyboardControls"]
 layout_mode = 2
 size_flags_vertical = 10
-text = "PRESS F5 TO RESET BINDINGS."
+text = "PRESSIONE F5 PARA REINICIAR AS ASSOCIAÇÕES."
 uppercase = true
 
 [node name="Controller" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" node_paths=PackedStringArray("options")]
@@ -861,21 +861,21 @@ type = 1
 layout_mode = 2
 settings_category = "controller"
 action_names = ["ui_accept"]
-title = "ACCEPT"
+title = "ACEITAR"
 type = 1
 
 [node name="Back" parent="PanelContainer/MarginContainer/VBoxContainer/Controller" groups=["Options"] instance=ExtResource("9_ksnto")]
 layout_mode = 2
 settings_category = "controller"
 action_names = ["ui_back"]
-title = "BACK"
+title = "VOLTAR"
 type = 1
 
 [node name="Pause" parent="PanelContainer/MarginContainer/VBoxContainer/Controller" groups=["Options"] instance=ExtResource("9_ksnto")]
 layout_mode = 2
 settings_category = "controller"
 action_names = ["pause"]
-title = "PAUSE"
+title = "PAUSA"
 type = 1
 
 [node name="InputMapSaving" type="Node" parent="PanelContainer/MarginContainer/VBoxContainer/Controller" groups=["Options"]]
@@ -885,7 +885,7 @@ type = 1
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Controller"]
 layout_mode = 2
 size_flags_vertical = 10
-text = "PRESS F5 TO RESET BINDINGS."
+text = "PRESSIONE F5 PARA REINICIAR AS ASSOCIAÇÕES."
 uppercase = true
 
 [node name="Data" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" node_paths=PackedStringArray("options")]
@@ -953,7 +953,7 @@ layout_mode = 2
 
 [node name="RegenROM" parent="PanelContainer/MarginContainer/VBoxContainer/Data" instance=ExtResource("9_t6b48")]
 layout_mode = 2
-title = "Reverify ROM"
+title = "Verificar novamente a ROM"
 
 [node name="Control" type="Control" parent="PanelContainer"]
 custom_minimum_size = Vector2(24, 0)

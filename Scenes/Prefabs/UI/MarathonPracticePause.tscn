@@ -34,12 +34,12 @@ func quit_to_menu() -> void:
 [node name="PauseMenu" instance=ExtResource("1_a8xej")]
 
 [node name="Label2" parent="Control/PanelContainer/MarginContainer/VBoxContainer" index="1"]
-text = "Restart run"
+text = "Reiniciar corrida"
 
 [node name="Label5" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer" index="2"]
 layout_mode = 2
 size_flags_vertical = 7
-text = "Ghost: On"
+text = "Fantasma: Lig."
 uppercase = true
 
 [node name="Handler" type="Node" parent="." index="2"]
